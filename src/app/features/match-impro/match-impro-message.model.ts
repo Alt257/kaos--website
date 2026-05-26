@@ -1,5 +1,5 @@
 export interface MatchImproMessage {
-  type: string;
-  timestamp: number;
+  broadcastedAt: number;
+  receivedAt: Date;
   content: string;
 }
