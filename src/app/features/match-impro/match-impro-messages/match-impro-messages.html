@@ -1,1 +1,16 @@
-<p>match-impro-messages works!</p>
+<section class="match-impro-messages">
+  <h2>Messages en temps réel</h2>
+
+  @if (messages$ | async; as messages) {
+    @if (messages.length > 0) {
+      <ul>
+        @for (message of messages; track message.broadcastedAt) {
+          <li>
+            <strong>{{ message.receivedAt | date: 'HH:mm:ss' }}</strong>
+            <span>{{ message.content }}</span>
+          </li>
+        }
+      </ul>
+    }
+  }
+</section>
