@@ -18,6 +18,8 @@ export class MatchImproHubClient {
   private readonly connection: signalR.HubConnection;
   private readonly messagesSubject = new Subject<MatchImproMessage>();
 
+  private isStarted = false;
+
   readonly messages$: Observable<MatchImproMessage> = this.messagesSubject.asObservable();
 
   constructor(connectionFactory: SignalRConnectionFactory) {
@@ -26,7 +28,12 @@ export class MatchImproHubClient {
   }
 
   async start(): Promise<void> {
+    if (this.isStarted) {
+      return;
+    }
+
     await this.connection.start();
+    this.isStarted = true;
   }
 
   async stop(): Promise<void> {
