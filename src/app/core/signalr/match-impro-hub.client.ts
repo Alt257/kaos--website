@@ -5,7 +5,7 @@ import { MatchImproMessage } from '../../features/match-impro/match-impro-messag
 import { SignalRConnectionFactory } from './signalr-connection.factory';
 
 interface ReceiveMessagePayload {
-  type: 'itemUpdated';
+  type: 'messageUpdated';
   timestamp: string;
   content: string;
 }
@@ -41,8 +41,8 @@ export class MatchImproHubClient {
   }
 
   private registerHandlers(): void {
-    this.connection.on('ReceiveMessage', (message: ReceiveMessagePayload) => {
-      if (message.type !== 'itemUpdated') {
+    this.connection.on('ReceiveMatchImproInfos', (message: ReceiveMessagePayload) => {
+      if (message.type !== 'messageUpdated') {
         return;
       }
 
