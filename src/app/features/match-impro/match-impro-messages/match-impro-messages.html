@@ -1,16 +1,25 @@
 <section class="match-impro-messages">
   <h2>Messages en temps réel</h2>
 
-  @if (messages$ | async; as messages) {
-    @if (messages.length > 0) {
-      <ul>
-        @for (message of messages; track message.broadcastedAt) {
-          <li>
-            <strong>{{ message.receivedAt | date: 'HH:mm:ss' }}</strong>
-            <span>{{ message.content }}</span>
-          </li>
-        }
-      </ul>
-    }
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">broadcastedAt</th>
+        <th scope="col">receivedAt</th>
+        <th scope="col">content</th>
+      </tr>
+    </thead>
+@if (messages$ | async; as messages) {
+  @if (messages.length > 0) {
+    @let lastMessage = messages[messages.length - 1];
+    <tbody>
+      <tr>
+        <td>{{ lastMessage.broadcastedAt | date:'HH:mm:ss' }}</td>
+        <td>{{ lastMessage.receivedAt | date:'HH:mm:ss' }}</td>
+        <td>{{ lastMessage.content }}</td>
+      </tr>
+    </tbody>
   }
+}
+  </table>
 </section>
