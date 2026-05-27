@@ -9,17 +9,14 @@
         <th scope="col">content</th>
       </tr>
     </thead>
-@if (messages$ | async; as messages) {
-  @if (messages.length > 0) {
-    @let lastMessage = messages[messages.length - 1];
+@if (message$ | async; as message) {
     <tbody>
       <tr>
-        <td>{{ lastMessage.broadcastedAt | date:'HH:mm:ss' }}</td>
-        <td>{{ lastMessage.receivedAt | date:'HH:mm:ss' }}</td>
-        <td>{{ lastMessage.content }}</td>
+        <td>{{ message.broadcastedAt | date:'HH:mm:ss' }}</td>
+        <td>{{ message.receivedAt | date:'HH:mm:ss' }}</td>
+        <td>{{ message.content }}</td>
       </tr>
     </tbody>
-  }
 }
   </table>
 </section>
