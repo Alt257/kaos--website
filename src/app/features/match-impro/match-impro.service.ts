@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { MatchImproMessage } from './match-impro-message.model';
-import { Observable, scan, shareReplay } from 'rxjs';
+import { Observable, shareReplay } from 'rxjs';
 import { MatchImproHubClient } from '../../core/signalr/match-impro-hub.client';
 
 @Injectable({
@@ -11,8 +11,7 @@ export class MatchImproService {
 
   readonly messageReceived$: Observable<MatchImproMessage> = this.matchImproHubClient.messages$;
 
-  readonly messages$: Observable<readonly MatchImproMessage[]> = this.messageReceived$.pipe(
-    scan((messages, message) => [...messages, message], [] as MatchImproMessage[]),
+  readonly lastMessage$: Observable<MatchImproMessage> = this.messageReceived$.pipe(
     shareReplay({
       bufferSize: 1,
       refCount: true,

@@ -11,7 +11,7 @@ import { AsyncPipe, DatePipe } from '@angular/common';
 export class MatchImproMessages implements OnInit, OnDestroy {
   private readonly matchImproService = inject(MatchImproService);
 
-  readonly messages$ = this.matchImproService.messages$;
+  readonly message$ = this.matchImproService.lastMessage$;
 
   async ngOnInit(): Promise<void> {
     await this.matchImproService.connect();
