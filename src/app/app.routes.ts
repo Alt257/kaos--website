@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { MatchImproMessages } from './features/match-impro/match-impro-messages/match-impro-messages';
+import { BroadcastMessages } from './features/show-screen/components/broadcast-messages/broadcast-messages';
 
 export const routes: Routes = [
   {
@@ -7,8 +8,12 @@ export const routes: Routes = [
     component: MatchImproMessages,
   },
   {
+    path: 'broadcast-messages',
+    component: BroadcastMessages,
+  },
+  {
     path: '',
-    redirectTo: 'match-impro',
+    redirectTo: 'broadcast-messages',
     pathMatch: 'full',
   },
 ];
