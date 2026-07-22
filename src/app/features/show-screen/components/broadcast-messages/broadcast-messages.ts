@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { Message } from '../../models/message';
 
 @Component({
@@ -7,6 +7,11 @@ import { Message } from '../../models/message';
   templateUrl: './broadcast-messages.html',
   styleUrl: './broadcast-messages.css',
 })
-export class BroadcastMessages {
-  message = signal<Message>({ content: 'coucou' });
+export class BroadcastMessages implements OnInit {
+  message = signal<Message>({ content: 'ahke...' });
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.message.set({ content: 'coucou' });
+    }, 1500);
+  }
 }
