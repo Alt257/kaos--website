@@ -1,4 +1,4 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { MatchImproService } from '../match-impro.service';
 import { AsyncPipe, DatePipe } from '@angular/common';
 
@@ -6,6 +6,7 @@ import { AsyncPipe, DatePipe } from '@angular/common';
   selector: 'app-match-impro-messages',
   imports: [DatePipe, AsyncPipe],
   templateUrl: './match-impro-messages.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './match-impro-messages.css',
 })
 export class MatchImproMessages implements OnInit, OnDestroy {
