@@ -12,12 +12,19 @@ import { REALTIME_SOCKET } from './realtime-socket';
 export class MessageFeed {
   private readonly socket = inject(REALTIME_SOCKET);
   private readonly _message = signal<Message | null>(null);
+  private readonly _connected = signal<boolean>(false);
 
   /** Dernier message reçu, ou null tant que rien n'est arrivé. */
   readonly message = this._message.asReadonly();
 
+  /** État de la connexion temps réel, mis à jour par les événements du socket. */
+  readonly connected = this._connected.asReadonly();
+
   constructor() {
     this.socket.on('message', (payload) => this._message.set(this.toMessage(payload)));
+    this.socket.on('connect', () => this._connected.set(true));
+    this.socket.on('disconnect', () => this._connected.set(false));
+    this.socket.connect();
   }
 
   /** Traduit le payload brut du serveur en modèle de domaine. */
