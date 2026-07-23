@@ -62,4 +62,16 @@ describe('MessageFeed', () => {
 
     expect(feed.message()).toEqual({ content: 'coucou' });
   });
+  it('se connecte au démarrage', () => {
+    expect(socket.connectCalls).toBe(1);
+  });
+  it('connected() reflète les évènements connect/disconnect', () => {
+    expect(feed.connected()).toBe(false);
+
+    socket.serverEmit('connect');
+    expect(feed.connected()).toBe(true);
+
+    socket.serverEmit('disconnect');
+    expect(feed.connected()).toBe(false);
+  });
 });
