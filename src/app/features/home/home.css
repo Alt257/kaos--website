@@ -3,7 +3,7 @@
   min-height: 100vh;
   color: #fff7ed;
   background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.95)),
-  url("/images/mur-de-briques.jpg");
+  url("/assets/images/mur-de-briques.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
