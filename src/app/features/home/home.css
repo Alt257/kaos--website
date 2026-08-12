@@ -29,6 +29,8 @@
 .hero__content {
   position: relative;
   z-index: 1;
+  display: grid;
+  gap: clamp(1rem, 3vw, 1.5rem);
 }
 
 .hero__next-show {
