@@ -13,11 +13,7 @@
 
     @if (variant() === 'default') {
       <p class="show-card__description">
-        Une soirée d’improvisation théâtrale à
-        <a class="show-card__venue" target="_blank" rel="noreferrer" [href]="show().venue.url">{{
-            show().venue.name
-          }}</a
-        >.
+        {{ show().description }}
       </p>
     }
   </div>

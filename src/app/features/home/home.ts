@@ -15,6 +15,7 @@ export class Home {
       day: '1',
       month: 'sept.',
       title: 'Mardi 1er septembre — 19h30',
+      description: "Cabaret d'impro + « choix de l\'animateur(ice) » !",
       url: 'https://www.labrassee.cafe/scene',
       venue: { name: 'la Brassée', url: 'https://www.labrassee.cafe/' },
     },
