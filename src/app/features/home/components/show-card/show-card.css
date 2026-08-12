@@ -1,0 +1,116 @@
+:host {
+  display: block;
+}
+
+.show-card {
+  --card-padding: 1.25rem;
+  --card-gap: 1.25rem;
+  --card-radius: 1.5rem;
+  --card-content-gap: 0.65rem;
+  --card-date-size: 5rem;
+  --card-date-radius: 1.25rem;
+  --card-date-shadow: 0.35rem 0.35rem 0 #000;
+  --card-day-size: 2rem;
+  --card-month-size: 1rem;
+  --card-title-size: 1.2rem;
+  --card-width: -moz-max-content;
+
+  position: relative;
+  display: flex;
+  gap: var(--card-gap);
+  align-items: center;
+  width: var(--card-width);
+  padding: var(--card-padding);
+  border-radius: var(--card-radius);
+  background: linear-gradient(135deg, rgba(244, 142, 23, 0.2), rgba(255, 255, 255, 0.06));
+}
+
+/* une variante = un jeu de surcharges, aucune propriété de mise en forme redéclarée */
+.show-card--compact {
+  --card-padding: 0.75rem;
+  --card-gap: 0.875rem;
+  --card-radius: 1.125rem;
+  --card-date-size: 3.25rem;
+  --card-date-radius: 0.875rem;
+  --card-date-shadow: 0.25rem 0.25rem 0 #000;
+  --card-day-size: 1.35rem;
+  --card-month-size: 0.7rem;
+  --card-title-size: 1.05rem;
+  /*--card-width: fit-content;*/
+}
+
+.show-card__date {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: var(--card-date-size);
+  height: var(--card-date-size);
+  border: 2px solid #2a211d;
+  border-radius: var(--card-date-radius);
+  color: #2a211d;
+  background: #f48e17;
+  box-shadow: var(--card-date-shadow);
+}
+
+.show-card__day {
+  font-size: var(--card-day-size);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.show-card__month {
+  font-size: var(--card-month-size);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* le gap se neutralise seul quand la description est absente */
+.show-card__content {
+  display: grid;
+  gap: var(--card-content-gap);
+}
+
+.show-card__title {
+  margin: 0;
+  color: #ffd3a1;
+  font-size: var(--card-title-size);
+}
+
+.show-card__description {
+  margin: 0;
+  color: #f8e5d0;
+  line-height: 1.7;
+}
+
+.show-card__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* toute la carte cliquable, sans imbriquer les <a> */
+.show-card__link::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+}
+
+/* le lien du lieu repasse au-dessus de l'overlay */
+.show-card__venue {
+  position: relative;
+  z-index: 2;
+  color: #ffd3a1;
+  font-weight: 800;
+}
+
+@media (max-width: 560px) {
+  /* la variante compacte reste en ligne : l'empiler annulerait le gain de hauteur */
+  .show-card:not(.show-card--compact) {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .show-card:not(.show-card--compact) .show-card__date {
+    width: 100%;
+  }
+}
