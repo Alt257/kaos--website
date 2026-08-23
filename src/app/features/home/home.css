@@ -226,6 +226,46 @@ h3 {
   }
 }
 
+.button--facebook {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(24, 119, 242, 0.18);
+  color: #fff7ed;
+  border: 1px solid rgba(24, 119, 242, 0.5);
+  box-shadow: 0 4px 14px rgba(24, 119, 242, 0.2);
+  transition: all 0.2s ease;
+}
+
+.button--facebook:hover {
+  background: #1877f2;
+  color: #ffffff;
+  border-color: #1877f2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(24, 119, 242, 0.4);
+}
+
+.button--facebook .icon-facebook {
+  flex-shrink: 0;
+  fill: #1877f2;
+  transition: fill 0.2s ease;
+}
+
+.button--facebook:hover .icon-facebook {
+  fill: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .floating-facebook-btn .btn-label {
+    display: none; /* Icone seule sur petit écran pour ne pas encombrer */
+  }
+
+  .floating-facebook-btn {
+    padding: 0.85rem;
+    border-radius: 50%;
+  }
+}
+
 @media (max-width: 560px) {
   .hero__actions {
     align-items: stretch;
