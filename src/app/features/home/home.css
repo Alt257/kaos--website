@@ -209,9 +209,16 @@ h3 {
   }
 
   .hero {
-    grid-template-columns: 1fr;
-    gap: 2rem;
     min-height: auto;
+  }
+
+  .hero__content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'logo'
+      'description'
+      'visual';
+    gap: 2rem;
   }
 
   .hero__logo {
