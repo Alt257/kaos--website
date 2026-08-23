@@ -19,11 +19,11 @@
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-  gap: 3rem;
-  align-items: end;
-  min-height: 70vh;
+  /*display: grid;*/
+  /*grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);*/
+  /*gap: 3rem;*/
+  /*align-items: end;*/
+  /*min-height: 70vh;*/
 }
 
 .hero__content {
@@ -31,10 +31,16 @@
   z-index: 1;
   display: grid;
   gap: clamp(1rem, 3vw, 1.5rem);
+  align-items: end;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    'logo visual'
+    'description description';
 }
 
 .hero__next-show,
 .hero__description {
+  grid-area: description;
   padding: clamp(1.25rem, 4vw, 2rem);
   background: rgba(31, 23, 20, 0.72);
   border: 1px solid rgba(255, 211, 161, 0.18);
