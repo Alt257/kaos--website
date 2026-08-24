@@ -108,6 +108,10 @@
     --card-width: -moz-max-content;
   }
 
+  .show-card--compact {
+    width: -moz-max-content;
+  }
+
   /* la variante compacte reste en ligne : l'empiler annulerait le gain de hauteur */
   .show-card:not(.show-card--compact) {
     align-items: stretch;
