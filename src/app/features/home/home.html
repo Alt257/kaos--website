@@ -9,20 +9,14 @@
       </div>
 
       <div class="hero__description">
-        <p class="hero__eyebrow">Troupe d’improvisation théâtrale</p>
+        <p class="description__title">Troupe d’improvisation théâtrale</p>
 
-        <p class="hero__intro">
+        <p class="description__text">
           Une joyeuse dose de <b>K.A.O.S.</b> sur la scène, c'est nous ! <br/>
           <!--          Une troupe née de l'envie de bousculer les codes habituels de l'impro. <br/>-->
           Venez nous voir, chaque 1er mardi du mois à la Brassée, pour une soirée de bonne humeur et de folie — avec
           le « choix de l'animateur » en 2ième partie !
-
         </p>
-
-        @if (nextShow(); as show) {
-          <p class="section-label">Prochain rendez-vous</p>
-          <app-show-card [show]="show" variant="compact"/>
-        }
 
         <div class="hero__actions">
           <a class="button button--facebook"
@@ -40,6 +34,13 @@
           <a class="button button--primary" href="#every-next-shows">Voir tous les spectacles</a>
           <a class="button button--secondary" href="#about">Découvrir la troupe</a>
         </div>
+
+        @if (nextShow(); as show) {
+          <div class="hero__next-show">
+            <p class="section-label">Prochain rendez-vous</p>
+            <app-show-card [show]="show" variant="compact"/>
+          </div>
+        }
       </div>
     </div>
   </div>

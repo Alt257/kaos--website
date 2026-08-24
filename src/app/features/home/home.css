@@ -38,9 +38,14 @@
     'description description';
 }
 
-.hero__next-show,
 .hero__description {
   grid-area: description;
+  display: grid;
+  gap: 2.1rem;
+  grid-template-areas:
+    'title next-show'
+    'text next-show'
+    'actions actions';
   padding: clamp(1.25rem, 4vw, 2rem);
   background: rgba(31, 23, 20, 0.72);
   border: 1px solid rgba(255, 211, 161, 0.18);
@@ -50,7 +55,11 @@
   backdrop-filter: blur(10px);
 }
 
-.hero__eyebrow,
+.hero__next-show {
+  grid-area: next-show;
+}
+
+.description__title,
 .section-label {
   margin: 0 0 0.75rem;
   color: #f4a340;
@@ -59,8 +68,24 @@
   text-transform: uppercase;
 }
 
-.hero__eyebrow {
+.description__title {
+  grid-area: title;
   font-size: 1.4rem;
+}
+
+.description__text {
+  grid-area: text;
+  color: #f8e5d0;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.65;
+}
+
+.hero__actions {
+  grid-area: actions;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .section-label {
@@ -101,19 +126,6 @@ h3 {
   margin-bottom: 0.65rem;
   color: #ffd3a1;
   font-size: 1.2rem;
-}
-
-.hero__intro {
-  color: #f8e5d0;
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
-  line-height: 1.65;
-}
-
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
 }
 
 .button {
