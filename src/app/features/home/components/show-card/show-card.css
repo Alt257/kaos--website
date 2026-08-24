@@ -27,7 +27,7 @@
 
 /* une variante = un jeu de surcharges, aucune propriété de mise en forme redéclarée */
 .show-card--compact {
-  --card-padding: 0.75rem;
+  --card-padding: 0.75rem 1rem;
   --card-gap: 0.875rem;
   --card-radius: 1.125rem;
   --card-date-size: 3.25rem;
