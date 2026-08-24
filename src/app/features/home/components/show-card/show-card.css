@@ -36,7 +36,7 @@
   --card-day-size: 1.35rem;
   --card-month-size: 0.7rem;
   --card-title-size: 1.05rem;
-  /*--card-width: fit-content;*/
+  --card-width: fit-content;
 }
 
 .show-card__date {
@@ -104,6 +104,10 @@
 }
 
 @media (max-width: 560px) {
+  .show-card {
+    --card-width: -moz-max-content;
+  }
+
   /* la variante compacte reste en ligne : l'empiler annulerait le gain de hauteur */
   .show-card:not(.show-card--compact) {
     align-items: stretch;
