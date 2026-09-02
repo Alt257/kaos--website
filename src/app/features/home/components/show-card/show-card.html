@@ -1,0 +1,20 @@
+<article class="show-card" [class.show-card--compact]="variant() === 'compact'">
+  <div class="show-card__date">
+    <span class="show-card__day">{{ show().day }}</span>
+    <span class="show-card__month">{{ show().month }}</span>
+  </div>
+
+  <div class="show-card__content">
+    <h3 class="show-card__title">
+      <a class="show-card__link" target="_blank" rel="noreferrer" [href]="show().url">
+        {{ variant() === 'default' ? show().title : show().venue.name }}
+      </a>
+    </h3>
+
+    @if (variant() === 'default') {
+      <p class="show-card__description">
+        {{ show().description }}
+      </p>
+    }
+  </div>
+</article>

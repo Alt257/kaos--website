@@ -1,59 +1,70 @@
-# KaosWebsite
+# K.A.O.S. — Site web de la troupe
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.12.
+Application front (Angular) du site web de la troupe de théâtre d'improvisation **K.A.O.S.**
 
-## Development server
+Ce projet fait partie de l'écosystème **Scène Impro Live**, qui regroupe le front Angular et plusieurs services backend indépendants (API REST, diffusion temps réel des états de scène, etc.).
 
-To start a local development server, run:
+## Écosystème du projet
+
+Ce dépôt correspond uniquement au **front Angular** (site web + écrans de spectacle). Il fait partie d'un ensemble plus large :
+
+- **Front Angular** *(ce dépôt)* — site web de la troupe + écrans d'affichage
+- **App technicien (Flutter)** — application installée sur le téléphone et l'ordinateur du technicien, permettant d'envoyer les informations (thème, catégorie, temps restant, etc.) au service de diffusion
+- **Microservices backend** — API REST + diffusion temps réel, écrits en **Symfony** ou en **.NET** selon le service
+
+## Présentation
+
+Le site remplit trois fonctions principales, réparties sur plusieurs pages :
+
+### 🏠 Page d'accueil
+
+Présente la troupe K.A.O.S. au grand public :
+
+- Présentation de la troupe
+- Prochains spectacles (dates, lieux)
+- Liens vers les réseaux sociaux
+
+### 🎭 Page d'affichage public *(pendant le spectacle)*
+
+Écran projeté à destination du public pendant les représentations :
+
+- Informations sur la scène en cours (thème, catégorie, temps restant, etc.)
+- Interaction possible via le téléphone mobile du public
+
+### 🎬 Page d'affichage joueurs *(pendant le spectacle)*
+
+Écran destiné aux improvisateurs sur scène :
+
+- Informations utiles en temps réel pendant le jeu
+
+> ℹ️ Les noms définitifs des pages/écrans ne sont pas encore arrêtés.
+
+## Stack technique
+
+- **Framework (ce dépôt)** : Angular
+- **App technicien** : Flutter (mobile + desktop)
+- **Backends** : microservices indépendants (Symfony et/ou .NET), exposant une API REST et une diffusion temps réel via WebSocket
+
+## Démarrage
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+L'application sera accessible sur `http://localhost:4200/`.
 
-## Code scaffolding
+## Structure du projet
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+src/
+├── app/
+│   ├── home/              # Page d'accueil
+│   ├── public-display/    # Affichage public pendant le spectacle
+│   ├── player-display/    # Affichage pour les joueurs sur scène
+│   └── ...
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Statut
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+🚧 Projet en cours de développement.

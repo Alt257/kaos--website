@@ -1,14 +1,13 @@
 import { Routes } from '@angular/router';
-import { MatchImproMessages } from './features/match-impro/match-impro-messages/match-impro-messages';
+import { Home } from './features/home/home';
 
 export const routes: Routes = [
   {
-    path: 'match-impro',
-    component: MatchImproMessages,
+    path: '',
+    component: Home,
   },
   {
-    path: '',
-    redirectTo: 'match-impro',
-    pathMatch: 'full',
+    path: '**',
+    redirectTo: '',
   },
 ];
