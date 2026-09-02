@@ -4,12 +4,12 @@ import { Show } from '../../../../core/shows/show';
 import { ShowCard } from './show-card';
 
 const SHOW: Show = {
-  id: 'brassee-2026-09-01',
-  day: '1',
-  month: 'sept.',
-  title: 'Mardi 1er septembre — 19h30',
+  id: 'brassee-2026-10-06',
+  title: 'Cabaret KAOS-tik !',
+  startAt: new Date('2026-10-06T19:30'),
+  description: "Cabaret d'impro avec une surprise en 2ième partie !",
   url: 'https://www.labrassee.cafe/scene',
-  venue: { name: 'la Brassée', url: 'https://www.labrassee.cafe/' },
+  venue: { name: 'Café la Brassée', url: 'https://www.labrassee.cafe/' },
 };
 
 describe('ShowCard', () => {
@@ -31,7 +31,7 @@ describe('ShowCard', () => {
   it('rend la date et le titre du spectacle', () => {
     expect(query('.show-card__day').textContent).toContain('1');
     expect(query('.show-card__month').textContent).toContain('sept.');
-    expect(query('.show-card__title').textContent).toContain('Mardi 1er septembre — 19h30');
+    expect(query('.show-card__title').textContent).toContain('Cabaret KAOS-tik !');
   });
 
   it('lie le titre au spectacle et le lieu à son site', () => {

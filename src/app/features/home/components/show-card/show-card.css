@@ -82,6 +82,10 @@
   line-height: 1.7;
 }
 
+.show-card__venue-link {
+  color: #f28d17;
+}
+
 .show-card__link {
   color: inherit;
   text-decoration: none;
