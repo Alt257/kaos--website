@@ -11,10 +11,19 @@ import { ShowCard } from './components/show-card/show-card';
 export class Home {
   protected readonly upcomingShows = signal<readonly Show[]>([
     {
-      id: 'brassee-2026-09-01',
-      day: '1',
-      month: 'sept.',
-      title: 'Mardi 1er septembre — 19h30',
+      id: 'brassee-2026-10-06',
+      day: '6',
+      month: 'oct.',
+      title: 'Cabaret KAOS-tik ! — Mardi 6 octobre — 19h30',
+      description: "Cabaret d'impro avec une surprise en 2ième partie !",
+      url: 'https://www.labrassee.cafe/scene',
+      venue: { name: 'la Brassée', url: 'https://www.labrassee.cafe/' },
+    },
+    {
+      id: 'brassee-2026-11-03',
+      day: '3',
+      month: 'nov.',
+      title: 'Cabaret KAOS-tik ! — Mardi 3 novembre — 19h30',
       description: "Cabaret d'impro avec une surprise en 2ième partie !",
       url: 'https://www.labrassee.cafe/scene',
       venue: { name: 'la Brassée', url: 'https://www.labrassee.cafe/' },
