@@ -8,13 +8,13 @@
     <h3 class="show-card__title">
       <!--      <a class="show-card__link" target="_blank" rel="noreferrer" [href]="show().url">-->
       {{ show().title }}
+      — {{ show().startAt | date: 'HH:mm' }}
       <!--      </a>-->
     </h3>
 
     <div class="show-card__venue">
       <a class="show-card__venue-link" target="_blank" rel="noreferrer"
          [href]="show().venue.url">{{ show().venue.name }}</a>
-      — {{ show().startAt | date: 'HH:mm' }}
     </div>
 
     @if (variant() === 'default') {
