@@ -14,7 +14,13 @@ export class Home {
       id: 'brassee-2026-10-06',
       title: 'Cabaret KAOS',
       startAt: new Date('2026-10-06T19:30'),
-      description: "Cabaret d'impro avec une surprise en 2ième partie !",
+      description:
+        'Bienvenue dans le manoir… \n' +
+        '\n' +
+        'Ce soir, c’est vous qui décidez du destin de l’enquête.\n' +
+        'Le public et les improvisateurs vont coécrire l’histoire, dévoiler les secrets et créer les rebondissements. Indices, pièges, révélations : tout dépend de vous !\n' +
+        '\n' +
+        'À vous de jouer : le mystère attend votre verdict.',
       url: 'https://www.labrassee.cafe/scene',
       venue: { name: 'Café la Brassée', url: 'https://www.labrassee.cafe/' },
     },
