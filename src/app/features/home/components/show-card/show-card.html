@@ -1,4 +1,12 @@
-<article class="show-card" [class.show-card--compact]="variant() === 'compact'">
+<article id="show-card__{{ show().id }}{{ variant() === 'compact' ? '--compact' : ''}}"
+         class="show-card"
+         [class.show-card--compact]="variant() === 'compact'">
+
+  @if (variant() === 'compact') {
+    <a class="show-card__link" [href]="'#show-card__' + show().id"></a>
+  }
+  <!--      <a class="show-card__link" target="_blank" rel="noopener noreferrer" [href]="show().url"></a>-->
+
   <div class="show-card__date">
     <span class="show-card__day">{{ show().startAt | date: 'd' }}</span>
     <span class="show-card__month">{{ show().startAt | date: 'MMM' }}</span>
@@ -6,10 +14,8 @@
 
   <div class="show-card__content">
     <h3 class="show-card__title">
-      <!--      <a class="show-card__link" target="_blank" rel="noreferrer" [href]="show().url">-->
       {{ show().title }}
       — {{ show().startAt | date: 'HH:mm' }}
-      <!--      </a>-->
     </h3>
 
     <div class="show-card__venue">
