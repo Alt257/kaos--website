@@ -2,17 +2,17 @@
   <div class="hero">
     <div class="hero__content">
 
-      <img class="hero__logo" src="/assets/images/kaos-logo-large.png" alt="Logo de la troupe K.A.O.S."/>
+      <img class="hero__logo" src="/assets/images/kaos-logo-large.png" alt="Logo de la troupe K.A.O.S." />
 
       <div class="hero__visual" aria-hidden="true">
-        <img src="/assets/images/panneau.svg" alt=""/>
+        <img src="/assets/images/panneau.svg" alt="" />
       </div>
 
       <div class="hero__description">
         <p class="description__title">Troupe d’improvisation théâtrale</p>
 
         <p class="description__text">
-          Une joyeuse dose de <b>K.A.O.S.</b> sur la scène, c'est nous ! <br/>
+          Une joyeuse dose de <b>K.A.O.S.</b> sur la scène, c'est nous ! <br />
           <!--          Une troupe née de l'envie de bousculer les codes habituels de l'impro. <br/>-->
           Venez nous voir, chaque 1er mardi du mois à la Brassée, pour une soirée de bonne humeur et de folie — avec
           le « choix de l'animateur » en 2ième partie !
@@ -27,7 +27,7 @@
             <svg class="icon-facebook" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"
                  aria-hidden="true">
               <path
-                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
             </svg>
             <span>Page Facebook</span>
           </a>
@@ -38,7 +38,7 @@
         @if (nextShow(); as show) {
           <div class="hero__next-show">
             <p class="section-label">Prochain rendez-vous</p>
-            <app-show-card [show]="show" variant="compact"/>
+            <app-show-card [show]="show" variant="compact" />
           </div>
         }
       </div>
@@ -52,7 +52,7 @@
     </div>
 
     @for (show of upcomingShows(); track show.id) {
-      <app-show-card [show]="show"/>
+      <app-show-card [show]="show" />
     }
   </section>
 
@@ -72,15 +72,16 @@
       <article>
         <h3>⚡ Un spectacle vivant !</h3>
         <p>
-          La troupe est née de l'envie de bousculer les codes habituels de l'impro —
-          ATTENTION chute de cadre ! — vous serez prévenus.
+          La troupe est née de l'envie de bousculer les codes habituels de l'impro — vous serez prévenus !<br>
+          ⚠️ ATTENTION – Risque de débordement créatif ! ⚠️ <br>
         </p>
       </article>
 
       <article>
         <h3>🤝 Une invitation au public</h3>
         <p>
-
+          Le public a non seulement un rôle à jouer pour influencer les improvisations mais
+          peut aussi être invité à monter sur scène pour participer avec respect et bienveillance.
         </p>
       </article>
     </div>
